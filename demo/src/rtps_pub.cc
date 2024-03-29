@@ -31,11 +31,25 @@ int main(int argc, char ** argv) {
 
     std::shared_ptr< eprosima::fastrtps::rtps::RTPSDomainImpl> rtps_domain = eprosima::fastrtps::rtps::RTPSDomainImpl::get_instance();
 
+
+    auto user_udp_transport_dsp = std::make_shared<eprosima::fastdds::rtps::UDPv4TransportDescriptor>();
+
+    // eprosima::fastdds::rtps::TransportInterface * transport_udp_interface =  user_udp_transport_dsp->create_transport();
+    // // eprosima::fastdds::rtps:
+    // eprosima::fastdds::rtps::UDPv4Transport * udp_transport = static_cast<eprosima::fastdds::rtps::UDPv4Transport*>(transport_udp_interface);
+    // bool is_init = udp_transport->init();
+
+
+
     eprosima::fastrtps::rtps::RTPSParticipantAttributes arrt;
+    arrt.useBuiltinTransports = false;
+    arrt.userTransports.push_back(user_udp_transport_dsp);
+
+
     eprosima::fastrtps::rtps::RTPSParticipantListener listener;
     eprosima::fastrtps::rtps::RTPSParticipant * rtps_dp = rtps_domain->createParticipant(111,true,arrt,&listener);
 
-    rtps_dp->enable();
+    // rtps_dp->enable();
     
     getchar();
    

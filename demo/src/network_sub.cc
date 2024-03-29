@@ -37,7 +37,7 @@ int main(int argc, char ** argv) {
 
     // std::unique_ptr<eprosima::fastrtps::rtps::SenderResource> sr = std::make_unique<eprosima::fastdds::rtps::UDPSenderResource>(udp_transport,);
     // send_res_list.push_back(sr);
-    eprosima::fastdds::rtps::UDPSenderResource;
+    // eprosima::fastdds::rtps::UDPSenderResource;
 
     eprosima::fastrtps::rtps::RTPSParticipantAttributes attr;
 
@@ -80,6 +80,7 @@ int main(int argc, char ** argv) {
 
     while(1){
         std::this_thread::sleep_for(std::chrono::seconds(1));
+        std::cout<<"while!"<<std::endl;
     }
 
 

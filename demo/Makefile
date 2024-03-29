@@ -1,15 +1,15 @@
 DEMO_SRC=./include/demo.cxx ./include/demoPubSubTypes.cxx
 
-FASTCDR_INC=/home/linux/Data/DDS/install/fastcdr/include
-FASTCDR_LIB=/home/linux/Data/DDS/install/fastcdr/lib
+FASTCDR_INC=/home/linux/Data/DDS/fastdds_test/install/fastcdr/include
+FASTCDR_LIB=/home/linux/Data/DDS/fastdds_test/install/fastcdr/lib
 
-FASTRTPS_INC=/home/linux/Data/DDS/install/fastrtps/include
-FASTRTPS_lib=/home/linux/Data/DDS/install/fastrtps/lib
+FASTRTPS_INC=/home/linux/Data/DDS/fastdds_test/install/fastrtps/include
+FASTRTPS_lib=/home/linux/Data/DDS/fastdds_test/install/fastrtps/lib
 
 TRANSPORT_SRC=/home/linux/Data/Fast-DDS-2.13.3/src/cpp/rtps/transport
 NETWORK_SRC=/home/linux/Data/Fast-DDS-2.13.3/src/cpp/rtps/network
 COMMON_SRC=/home/linux/Data/Fast-DDS-2.13.3/src/cpp
-COMMON_INC= -I/home/linux/Data/Fast-DDS-2.13.3/include/fastdds/rtps/common/ -I/home/linux/Data/Fast-DDS-2.13.3/src/cpp/rtps/ -I/home/linux/Data/DDS/install/fastrtps/include/fastdds/rtps/participant/ -I/home/linux/Data/DDS/src/fastrtps/test/mock/rtps/RTPSParticipant/fastdds/rtps/participant/ -I/home/linux/Data/Fast-DDS-2.13.3/thirdparty/filewatch/
+COMMON_INC= -I/home/linux/Data/Fast-DDS-2.13.3/include/fastdds/rtps/common/ -I/home/linux/Data/Fast-DDS-2.13.3/src/cpp/rtps/ -I/home/linux/Data/DDS/fastdds_test/install/fastrtps/include/fastdds/rtps/participant/ -I/home/linux/Data/DDS/fastdds_test/src/fastrtps/test/mock/rtps/RTPSParticipant/fastdds/rtps/participant/ -I/home/linux/Data/Fast-DDS-2.13.3/thirdparty/filewatch/
 
 COMMON_LIB= -lpthread
 

@@ -23,6 +23,7 @@
 #include <fastdds/dds/subscriber/qos/DataReaderQos.hpp>
 #include <fastdds/dds/subscriber/DataReaderListener.hpp>
 
+#include <fastdds/rtps/transport/UDPv4TransportDescriptor.h>
 
 class SubListener : public eprosima::fastdds::dds::DataReaderListener
     {
@@ -119,6 +120,12 @@ int main(int argc,char ** argv) {
     auto factory = eprosima::fastdds::dds::DomainParticipantFactory::get_instance();
 
     eprosima::fastdds::dds::DomainParticipantQos dp_qos;
+    // dp_qos.wire_protocol().builtin.discovery_config.
+    dp_qos.transport().use_builtin_transports = false;
+
+    auto user_udp_transport_dsp = std::make_shared<eprosima::fastdds::rtps::UDPv4TransportDescriptor>();
+    dp_qos.transport().user_transports.push_back(user_udp_transport_dsp);
+
     
     eprosima::fastdds::dds::DomainParticipant* dp = factory->create_participant(111,dp_qos);
 
